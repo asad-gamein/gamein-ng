@@ -1,0 +1,137 @@
+<div class="sidebar active">
+    <div class="logo_content">
+        <div class="logo">
+            <i class='bx bxl-c-plus-plus' style="font-size: 30px;"></i>
+            <div class="logoname" style="margin-left: 5px;">GameIN</div>
+        </div>
+        <i class='bx bx-menu-alt-right' id="btn" style="font-size: 25px;"></i>
+    </div>
+    <ul class="nav_list">
+        <li>
+
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a href="/user">
+                <i class='bx bx-grid-alt'></i>
+                <span class="link_names">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+            <a (click)="toggleApplyLeavePortal()">
+                <!-- toggleApplyLeavePortal<div></div> -->
+                <i class='bx bx-chat'></i>
+                <span class="link_names">Apply Leave</span>
+            </a>
+            <span class="tooltip">Apply Leave</span>
+        </li>
+        <li>
+            <a (click)="toggleMyLeavePortal()">
+                <i class='bx bx-pie-chart-alt-2'></i>
+                <span class="link_names">My Leaves</span>
+            </a>
+            <span class="tooltip">My Leaves</span>
+        </li>
+        <li>
+            <a (click)="toggleHolidaysPortal()">
+                <i class='bx bx-user'></i>
+                <span class="link_names">Holidays</span>
+            </a>
+
+            <span class="tooltip">Holidays</span>
+        </li>
+        <li>
+            <a (click)="toggleMyNotesPortal()">
+                <i class='bx bx-folder'></i>
+                <span class="link_names">My Notes</span>
+            </a>
+            <span class="tooltip">My Notes</span>
+        </li>
+        <!-- <li>
+            <a href="#">
+                <i class='bx bx-cart-alt' ></i>
+                <span class="link_names">Orders</span>
+            </a>
+            <span class="tooltip">Orders</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-heart' ></i>
+                <span class="link_names">Liked</span>
+            </a>
+            <span class="tooltip">Liked</span>
+        </li> -->
+        <li>
+            <a href="#">
+                <i class='bx bx-cog'></i>
+                <span class="link_names">Settings</span>
+            </a>
+            <span class="tooltip">Settings</span>
+        </li>
+    </ul>
+    <div class="profile_content">
+        <div class="profile">
+            <div class="profile_details">
+                <img src="https://static.wikia.nocookie.net/valorant/images/5/53/Myths_Iso.png" alt="">
+                <div class="name_job">
+                    <!-- <div class="name_job"> -->
+                    <div class="name">{{ userService.getUser()?.name }}</div>
+                    <!-- <div class="job">{{ userService.getUser()?.role }}</div>
+                      </div> -->
+
+                    <div class="job">{{ userService.getUser()?.role }}</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out"></i>
+        </div>
+    </div>
+</div>
+<div class="home_content">
+    <div class="text">
+        <ng-container class="hei" *ngIf="holidayPortalService.showPortal">
+            <app-holidays-portal></app-holidays-portal>
+        </ng-container>
+        <ng-container class="hei" *ngIf="applyLeavePortalService.showPortal">
+            <app-apply-leave-portal></app-apply-leave-portal>
+        </ng-container>
+        <ng-container class="hei" *ngIf="myLeavesPortalService.showPortal">
+            <app-my-leaves-portal></app-my-leaves-portal>
+        </ng-container>
+        <ng-container class="hei" *ngIf="myNotesPortalService.showPortal">
+            <app-notepad-portal></app-notepad-portal>
+        </ng-container>
+        
+        <div class="container-fluid">
+            <section class="page_404">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-14 ">
+                            <div class=" col-sm-offset-1  text-center">
+                                <div class="four_zero_four_bg">
+                                </div>
+
+                                <div class="contant_box_404">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    let searchBtn = document.querySelector(".bx-search")
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+    searchBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
+</script>

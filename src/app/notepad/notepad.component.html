@@ -1,0 +1,18 @@
+
+<br><br><div class="container-fluid">
+	<br><br>
+	<input type="text"  placeholder="Enter New Note" #note  class="form-control" />
+<br>
+
+<button class="btn btn-primary" (click)=newNote(note.value)>Add New Note</button>
+
+<ul *ngFor="let item of list; index as i">
+	<li class="list-group-item">{{i+1}}. {{item.name}} <button class="btn btn-primary" (click)="removenote(i)">Delete</button></li>
+</ul>
+
+
+<br>
+<div class="text-center"><a href="" class="btn btn-secondary text-center">Back</a></div>
+<br>
+</div>
+<div class="hei"></div>

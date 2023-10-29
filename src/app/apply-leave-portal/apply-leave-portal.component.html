@@ -1,0 +1,42 @@
+<!-- <p>apply-leave-portal works!</p> --><br/>
+<mat-card class="example-card">
+    <mat-card-content class="heading">Apply leave</mat-card-content>
+
+  
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Employee Name</mat-label>
+        <input matInput name="eid" [(ngModel)]="leave.eid" placeholder="Enter employee name" readonly>
+      </mat-form-field>      
+  
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>From date</mat-label>
+        <input matInput name="fromdate"[(ngModel)]="leave.fromdate"[matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>To date</mat-label>
+        <input matInput name="todate" [(ngModel)]="leave.todate" [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Reason for leave</mat-label>
+        <textarea name="reason"[(ngModel)]="leave.reason" matInput placeholder="Reason for leave"></textarea>
+      </mat-form-field>
+  </form>
+  <span class="example-full-width marg"><div class="buttons">
+    <button (click)="selectLeaveType('sick')" [ngClass]="{'active': selectedLeaveType === 'sick'}" class="btn btn-outline-primary">Sick Leave</button>
+    <button (click)="selectLeaveType('annual')" [ngClass]="{'active': selectedLeaveType === 'annual'}" class="btn btn-outline-primary float-right">Annual Leave</button>
+  </div>
+  </span><br/>
+  <br>
+  <div class="buttons">
+    <button (click)="apply()" mat-raised-button color="primary">Apply</button>&nbsp;
+    <!-- <button routerLink="/viewallleave" mat-raised-button color="accent">view</button> -->
+  </div>
+</mat-card>
+<div class="hei"></div>
