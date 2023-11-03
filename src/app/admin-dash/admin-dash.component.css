@@ -24284,5 +24284,5 @@ a.fc-more:hover {
     white-space: nowrap; /* Prevent text from wrapping to the next line */
     overflow: hidden;    /* Hide any overflowing text */
     text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
-    width: 84%;
+    width: 100%;
   }

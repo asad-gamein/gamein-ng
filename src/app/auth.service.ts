@@ -7,7 +7,7 @@ export class AuthService {
   // isLoggedIn() {
   //   throw new Error('Method not implemented.');
   // }
-  private apiUrl = 'http://localhost:3000/api'; // Replace with your API URL
+  private apiUrl = 'https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api'; // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 

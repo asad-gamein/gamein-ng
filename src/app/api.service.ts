@@ -11,31 +11,31 @@ export class ApiService {
 
   //apply leave
    applyleave(data:leavemodel){
-     return this.http.post<leavemodel>("http://localhost:3000/api/post",data);
+     return this.http.post<leavemodel>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/post",data);
    }
   // view leave
   viewleave(){
-    return this.http.get<leavemodel[]>("http://localhost:3000/api/posts");
+    return this.http.get<leavemodel[]>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/posts");
   }
   viewallleave(){
-    return this.http.get<leavemodel[]>("http://localhost:3000/api/posts");
+    return this.http.get<leavemodel[]>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/posts");
   }
   // delete leave
   delete(id:number){
-    return this.http.delete<leavemodel>("http://localhost:3000/api/post/"+id)
+    return this.http.delete<leavemodel>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/post/"+id)
   }
   // fetch data
   fetchdata(id:number){
-    return this.http.get<leavemodel>("http://localhost:3000/posts/"+id)
+    return this.http.get<leavemodel>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/posts/"+id)
   }
   // update data
   update(data:leavemodel,postId:number){
-    return this.http.put<leavemodel>("http://localhost:3000/api/post/"+postId,data)
+    return this.http.put<leavemodel>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/post/"+postId,data)
   }
 
   getLeavesByUserEmail(email: string) {
     console.log("email",email)
-    return this.http.get<leavemodel[]>("http://localhost:3000/api/posts/"+email);
+    return this.http.get<leavemodel[]>("https://gamein-lms-9ffbf98aa3d3.herokuapp.com/api/posts/"+email);
   }
   
 

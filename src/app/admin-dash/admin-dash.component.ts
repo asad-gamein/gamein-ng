@@ -46,6 +46,13 @@ export class AdminDashComponent implements OnInit {
   isAdmin: boolean | undefined;
 
   ngOnInit() {
+    // ngOnInit() {
+      const user = this.userService.getUser();
+      if (user) {
+        this.isAdmin = user.role === 'admin';
+      }
+    // }
+    
     this.isAdmin = this.authService.isUserAdmin();
   }
 

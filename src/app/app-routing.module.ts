@@ -23,13 +23,13 @@ const routes: Routes = [
   {path: 'applyleave', component: ApplyLeaveComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'home', component: HomeDashComponent},
-  {path: 'admin', component: AdminDashComponent},
+  // {path: 'admin', component: AdminDashComponent},
   { path: 'holidays', component: HolidaysComponent },
-  // {
-  //   path: 'admin',
-  //   component: AdminDashComponent,
-  //   canActivate: [AdminGuard]
-  // },
+  {
+    path: 'admin',
+    component: AdminDashComponent,
+    canActivate: [AdminGuard]
+  },
   { path: 'notepad', component: NotepadComponent },
   { path: 'myleaves', component:MyLeavesComponent},
   {path:'updateleave/:id',component:UpdateLeaveComponent},
